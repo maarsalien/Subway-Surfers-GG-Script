@@ -1,0 +1,23 @@
+{
+  "name": "com.kiloo.subwaysurf",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "clean": "rimraf dist",
+    "watch": "nodemon --watch src --ext lua --exec \"npm run build\"",
+    "build": "npm run clean && node build",
+    "adb:push": "adb push dist/com.kiloo.subwaysurf.lua  /sdcard",
+    "build:push": "npm run build && npm run adb:push",
+    "watch:push": "nodemon --watch src --ext lua --exec \"npm run build:push\""
+  },
+  "keywords": [],
+  "author": "Maars",
+  "license": "MIT",
+  "devDependencies": {
+    "luabundle": "^1.6.0",
+    "luacheck": "^0.1.2",
+    "luamin": "^1.0.4",
+    "nodemon": "^2.0.22",
+    "rimraf": "^5.0.1"
+  }
+}
